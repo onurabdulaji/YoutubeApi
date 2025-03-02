@@ -11,22 +11,26 @@ namespace YoutubeApiSln.Mapper.AutoMapper
 
         public TDestination Map<TDestination, TSource>(TSource source, string? ignore = null)
         {
-            throw new NotImplementedException();
+            Config<TDestination, TSource>(5, ignore);
+            return MapperContainer.Map<TSource, TDestination>(source);
         }
 
         public IList<TDestination> Map<TDestination, TSource>(IList<TSource> sources, string? ignore = null)
         {
-            throw new NotImplementedException();
+            Config<TDestination, TSource>(5, ignore);
+            return MapperContainer.Map<IList<TSource>, IList<TDestination>>(sources);
         }
 
         public TDestination Map<TDestination>(object source, string? ignore = null)
         {
-            throw new NotImplementedException();
+            Config<TDestination, object>(5, ignore);
+            return MapperContainer.Map<TDestination>(source);
         }
 
         public IList<TDestination> Map<TDestination>(IList<object> sources, string? ignore = null)
         {
-            throw new NotImplementedException();
+            Config<TDestination, IList<object>>(5, ignore);
+            return MapperContainer.Map<IList<TDestination>>(sources);
         }
 
         protected void Config<TDestination, TSource>(int depth = 5, string? ignore = null)
@@ -55,4 +59,3 @@ namespace YoutubeApiSln.Mapper.AutoMapper
     }
 }
 
-// 18:47 AutoMapper'da kaldik
