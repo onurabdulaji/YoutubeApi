@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace YoutubeApiSln.Application.Features.Products.Commands.CreateProduct;
 
-public class CreateProductCommandRequest : IRequest
+public class CreateProductCommandRequest : IRequest<Unit>
 {
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
